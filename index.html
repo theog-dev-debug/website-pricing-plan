@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Paket Landing Page — Lumeena</title>
+<style>
+:root{--bg:#fbf7f4;--surface:#fff;--text:#2b2326;--muted:#6f6165;--line:#eadfdb;--accent:#a63d5f;--accent-soft:#f6e3e9;--ok:#2f7d5b;--no:#a14a3a;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1416;--surface:#251d20;--text:#f3eaec;--muted:#b7a7ac;--line:#3a2e32;--accent:#e58aa8;--accent-soft:#3a2530;--ok:#6fcf9f;--no:#e8917f;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#1a1416;--surface:#251d20;--text:#f3eaec;--muted:#b7a7ac;--line:#3a2e32;--accent:#e58aa8;--accent-soft:#3a2530;--ok:#6fcf9f;--no:#e8917f;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 Georgia,"Times New Roman",serif}
+.wrap{max-width:860px;margin:0 auto;padding:20px 16px 64px}
+h1,h2,h3,.tab,th{font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+header{padding:28px 0 8px}
+.eyebrow{color:var(--accent);font:600 12px system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase}
+h1{font-size:clamp(28px,6vw,40px);line-height:1.15;margin:6px 0 10px}
+.lead{color:var(--muted);margin:0}
+h2{font-size:22px;margin:40px 0 12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px}
+ul{margin:8px 0 0;padding-left:0;list-style:none}
+li{padding:5px 0 5px 24px;position:relative}
+.yes li::before{content:"✓";color:var(--ok);position:absolute;left:2px;font-weight:700}
+.no li::before{content:"✕";color:var(--no);position:absolute;left:2px;font-weight:700}
+.grid2{display:grid;gap:14px;grid-template-columns:1fr 1fr}
+@media (max-width:640px){.grid2{grid-template-columns:1fr}}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}
+.tab{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);color:var(--text);padding:9px 14px;border-radius:999px;font-size:14px;font-weight:600;cursor:pointer}
+.tab[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.panel{margin-top:14px}
+.concept{font-style:italic;color:var(--muted);margin:2px 0 12px}
+.price{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin:12px 0}
+.p{background:var(--accent-soft);border-radius:12px;padding:12px 14px}
+.p b{display:block;font:700 18px system-ui,sans-serif}
+.p span{font:13px system-ui,sans-serif;color:var(--muted)}
+h3{font-size:15px;margin:16px 0 0}
+.meta{font:14px system-ui,sans-serif;color:var(--muted);margin-top:14px;border-top:1px solid var(--line);padding-top:10px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+ol{padding-left:20px;margin:8px 0 0}
+footer{margin-top:40px;color:var(--muted);font:13px system-ui,sans-serif}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<div class="eyebrow">Surabaya · 2026</div>
+<h1>Pilihan Paket Landing Page — Lumeena</h1>
+<p class="lead">Landing page statis 1 halaman dengan formulir ke Google Spreadsheet dan tombol WhatsApp. Semua harga dalam Rupiah dan dapat disesuaikan dengan kebutuhan final.</p>
+</header>
+
+<h2>Termasuk di semua paket</h2>
+<div class="grid2">
+<div class="card yes"><b>Termasuk</b><ul>
+<li>Desain kustom sesuai warna & karakter brand</li>
+<li>Tampilan responsif (prioritas HP)</li>
+<li>Tombol WhatsApp dengan pesan awal otomatis</li>
+<li>Formulir → Google Sheet milik klien (Apps Script)</li>
+<li>Anti-spam dasar & kotak persetujuan data pribadi (UU PDP)</li>
+<li>Optimasi gambar, HTTPS, SEO dasar, uji coba sebelum rilis</li></ul></div>
+<div class="card no"><b>Tidak termasuk (kecuali add-on)</b><ul>
+<li>Sesi foto/video & pembuatan logo</li>
+<li>Booking kalender real-time, pembayaran online, login</li>
+<li>Panel admin/CMS, multi-halaman, blog, toko online</li>
+<li>Iklan berbayar & pengelolaan media sosial</li>
+<li>Email berdomain sendiri, SEO lanjutan</li></ul></div>
+</div>
+
+<h2>Pilih paket</h2>
+<div class="tabs" role="tablist" id="tabs"></div>
+<div class="card panel" id="panel" role="tabpanel"></div>
+
+<h2>Perbandingan singkat</h2>
+<div class="card scroll"><table>
+<thead><tr><th></th><th>Full-Service</th><th>Fully Managed</th><th>Source Code</th><th>Hybrid</th></tr></thead>
+<tbody>
+<tr><td><b>Harga</b></td><td>Rp 1,5–6 jt</td><td>Setup Rp 2–3,5 jt + Rp 250–600 rb/bln</td><td>Rp 2–6 jt</td><td>Rp 4–7 jt</td></tr>
+<tr><td><b>Domain & hosting</b></td><td>1 tahun, atas nama klien</td><td>Dikelola kami</td><td>Klien sendiri</td><td>1 tahun, atas nama klien</td></tr>
+<tr><td><b>Update konten</b></td><td>Per permintaan</td><td>Kuota bulanan</td><td>Klien sendiri</td><td>3 bulan pertama</td></tr>
+<tr><td><b>Source code</b></td><td>Tidak</td><td>Tidak</td><td>Ya</td><td>Ya</td></tr>
+<tr><td><b>Garansi bug</b></td><td>14 hari</td><td>Selama kontrak</td><td>14–30 hari</td><td>3 bulan</td></tr>
+<tr><td><b>Bebas pusing teknis</b></td><td>Ya</td><td>Sangat ya</td><td>Tidak</td><td>Ya (di awal)</td></tr>
+</tbody></table></div>
+
+<h2>Add-on opsional</h2>
+<div class="card scroll"><table>
+<thead><tr><th>Add-on</th><th>Perkiraan harga</th></tr></thead>
+<tbody>
+<tr><td>Update konten per permintaan (di luar paket)</td><td>Rp 75.000 – 150.000</td></tr>
+<tr><td>Section/fitur kecil (FAQ, banner promo musiman)</td><td>Rp 150.000 – 500.000</td></tr>
+<tr><td>Halaman tambahan</td><td>Rp 500.000 – 1.200.000 / halaman</td></tr>
+<tr><td>Dua bahasa (ID + EN)</td><td>Rp 500.000 – 1.000.000</td></tr>
+<tr><td>Google Analytics + Meta Pixel</td><td>Rp 150.000 – 350.000</td></tr>
+<tr><td>Notifikasi otomatis lead baru (email/WA)</td><td>Rp 250.000 – 600.000</td></tr>
+<tr><td>Serah source code untuk Paket 1/2</td><td>Rp 750.000 – 1.500.000</td></tr>
+<tr><td>SEO lokal dasar (Google Business Profile)</td><td>Rp 400.000 – 900.000</td></tr>
+</tbody></table></div>
+
+<h2>Alur kerja & pembayaran</h2>
+<div class="grid2">
+<div class="card"><b>Alur</b><ol>
+<li>Konsultasi & penawaran tertulis</li>
+<li>DP 50%, materi awal diterima</li>
+<li>Draf desain & revisi (2–3 putaran sesuai paket)</li>
+<li>Pengembangan & uji formulir/WhatsApp</li>
+<li>Pelunasan, rilis, serah terima</li></ol></div>
+<div class="card"><b>Yang perlu disiapkan klien</b><ul class="yes">
+<li>Logo & warna brand</li>
+<li>Foto portofolio resolusi asli</li>
+<li>Profil MUA, pricelist, testimoni berizin</li>
+<li>Nomor WhatsApp, Instagram, akun Google</li>
+<li>Satu PIC pengambil keputusan</li></ul></div>
+</div>
+
+<h2>Syarat umum</h2>
+<div class="card"><ul>
+<li>Domain atas nama klien; data formulir tersimpan di Google Sheet klien.</li>
+<li>Website bergantung pada layanan pihak ketiga (Google, hosting, WhatsApp); gangguan atau perubahan kebijakan mereka di luar kendali kami.</li>
+<li>Bug berarti fungsi yang tidak sesuai kesepakatan awal; permintaan baru bukan bug.</li>
+<li>Klien menjamin konten yang diserahkan miliknya atau berizin dipublikasikan.</li>
+<li>DP tidak dikembalikan setelah pengerjaan dimulai. Kami tidak menjamin jumlah pesanan atau peringkat Google.</li></ul></div>
+
+<footer>Draf umum, bukan nasihat hukum. Harga add-on dikonfirmasi sebelum pengerjaan.</footer>
+</div>
+
+<script>
+var P=[
+{n:"Full-Service",c:"Terima beres — domain, hosting, dan urusan teknis kami yang urus.",who:"MUA/Management yang fokus operasional dan tidak punya staf IT.",
+ prices:[["Starter","Rp 1,5 – 3 jt","Freelancer/pemula · 5 section · 12 foto · 2 revisi · 5–7 hari kerja"],["Profesional (disarankan)","Rp 3,5 – 6 jt","Agensi · 9 section · 30 foto · 5 profil MUA · 3 revisi · Analytics · 7–12 hari kerja"]],
+ yes:["Riset singkat & desain UI/UX kustom","Domain .com/.id 1 tahun atas nama klien","Hosting statis cepat (CDN) untuk foto resolusi tinggi","Formulir ke Google Sheet + tombol WhatsApp","Input materi awal: portofolio, profil, pricelist, testimoni","Training admin 1–2 jam (online)","Garansi perbaikan error 14 hari"],
+ no:["Update rutin setelah garansi (add-on atau Paket 2)","Source code (add-on atau Paket 3)","Perpanjangan tahun ke-2: domain ± Rp 150–350 rb + pengelolaan hosting Rp 150–300 rb/tahun"],
+ pay:"Biaya proyek sekali bayar (DP 50% + pelunasan saat rilis) + biaya tahunan mulai tahun ke-2."},
+{n:"Fully Managed",c:"Website & tim IT sewaan — kirim materi lewat WhatsApp, kami yang unggah.",who:"Management yang sering merotasi MUA, menambah portofolio, atau merilis promo musiman.",
+ prices:[["Skema A · Low upfront","Setup Rp 2 – 3,5 jt","+ Rp 300 – 600 rb/bln · min. 6 bulan · 6 update/bln · domain & hosting termasuk"],["Skema B · Standard upfront","Harga Paket 1","+ Rp 250 – 500 rb/bln · min. 3 bulan · 4 update/bln · domain ditagih terpisah"]],
+ yes:["Semua cakupan Paket 1","Update konten: foto, profil MUA, pricelist, promo, testimoni","Respon 1×24 jam kerja, update standar selesai 2–3 hari kerja","Backup kode & ekspor Google Sheet bulanan","Monitoring website, HTTPS, dan formulir","Perbaikan bug gratis selama kontrak","Laporan bulanan (Skema A)"],
+ no:["Halaman/fitur baru yang besar (proyek terpisah)","Pembuatan konten foto/video/teks panjang","Kuota tidak terpakai tidak diakumulasi","Di atas kuota: Rp 75–150 rb/permintaan","Source code tidak diserahkan selama kontrak"],
+ pay:"Setup (DP 50% + pelunasan) + retainer dibayar di muka per bulan/triwulan. Contoh: Rp 2,5 jt + Rp 450 rb × 12 = Rp 7,9 jt per tahun, sudah termasuk update, domain, dan hosting."},
+{n:"Source Code Only",c:"Jual putus — kami bangun, seluruh file diserahkan, klien yang mengelola.",who:"Agensi besar dengan tim IT atau yang ingin kendali penuh infrastruktur.",
+ prices:[["Landing page statis","Rp 2 – 5 jt","Sesuai spesifikasi tertulis"],["Kustom lengkap","Rp 4 – 6 jt","Setara tingkat Profesional"]],
+ yes:["Desain & coding sesuai spesifikasi","Apps Script dipasang di akun Google milik klien","Deploy ke hosting klien (Cloudflare Pages, Netlify, dll.) atau repo Git/ZIP","Dokumentasi teknis: ganti konten, pasang ulang Script, deploy","Sesi serah terima maks. 1 jam","Garansi bug 14–30 hari"],
+ no:["Pembelian & perpanjangan domain/hosting","Input materi ke website","Training lanjutan & pendampingan","Update/perawatan setelah garansi","Fitur baru di luar spesifikasi"],
+ pay:"Sekali bayar: DP 50%, pelunasan sebelum file/akses diserahkan."},
+{n:"Hybrid",c:"Bangun dulu, didampingi kemudian — akses penuh di tangan klien, kami temani 3 bulan.",who:"Management yang baru pertama punya website dan belajar alur booking digital.",
+ prices:[["Paket selesai","Rp 4 – 7 jt","Sekali bayar, sudah termasuk 3 bulan pendampingan"]],
+ yes:["Website setara Profesional + formulir + WhatsApp","Domain 1 tahun & hosting atas nama klien","Source code & akses penuh diserahkan","3 bulan pertama: 4 update/bln, 2 sesi training, cek alur lead (minggu 1, 4, 12), bug fix","Opsi lanjut di bulan ke-4 ke Paket 2 Skema B, atau berhenti tanpa biaya"],
+ no:["Update di atas kuota: Rp 75–150 rb/permintaan","Pembuatan konten","Layanan setelah 3 bulan kecuali lanjut maintenance","Perpanjangan domain tahun ke-2"],
+ pay:"Sekali bayar (DP 50% + pelunasan saat rilis). Maintenance bulan ke-4 bersifat opsional."}
+];
+var tabs=document.getElementById("tabs"),panel=document.getElementById("panel");
+function li(a){return a.map(function(x){return "<li>"+x+"</li>"}).join("")}
+function show(i){
+ var p=P[i];
+ Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute("aria-selected",j===i)});
+ panel.innerHTML="<h3 style='font-size:20px;margin:0'>"+(i+1)+". "+p.n+"</h3><p class='concept'>"+p.c+"</p><div><b>Cocok untuk:</b> "+p.who+"</div>"+
+ "<div class='price'>"+p.prices.map(function(x){return "<div class='p'><span>"+x[0]+"</span><b>"+x[1]+"</b><span>"+x[2]+"</span></div>"}).join("")+"</div>"+
+ "<div class='grid2'><div class='yes'><h3>Termasuk</h3><ul>"+li(p.yes)+"</ul></div><div class='no'><h3>Tidak termasuk</h3><ul>"+li(p.no)+"</ul></div></div>"+
+ "<div class='meta'><b>Pembayaran:</b> "+p.pay+"</div>";
+}
+P.forEach(function(p,i){var b=document.createElement("button");b.className="tab";b.type="button";b.setAttribute("role","tab");b.textContent=p.n;b.onclick=function(){show(i)};tabs.appendChild(b)});
+show(0);
+</script>
+</body>
+</html>
